@@ -1,0 +1,26 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<div class="container">
+  <h3>Registration</h3>
+  <form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input id="sign-up-button" type="submit" class="btn btn-primary" value="Sign Up">
+  </form>
+</div>
+
+<div class="col-4" id="social-box">
+  <h3>or you can sign in with</h3>
+  <div>
+    <ul class="social-network social-circle">
+      <li><a href="{% url 'social:begin' 'facebook' %}" class="icoFacebook" title="Facebook"><i
+            class="fa fa-facebook"></i></a></li>
+      <li><a href="{% url 'social:begin' 'google-oauth2' %}" class="icoGoogle" title="Google"><i
+            class="fa fa-google"></i></a></li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
