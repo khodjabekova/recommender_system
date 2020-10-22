@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'accounts',
+    'products',
 ]
 
 REST_FRAMEWORK = {
@@ -163,8 +164,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_DIR =  os.path.join(BASE_DIR, 'static')
 
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') 
+MEDIA_URL = '/media/'
+
 STATICFILES_DIRS = [
     STATIC_DIR,
+    MEDIA_ROOT,
 ]
 
 

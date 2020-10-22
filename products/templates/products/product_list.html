@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+{% if product_list %}
+{% for product in product_list %}
+<div>
+    <div><a href="{% url 'products:detail' pk=product.pk %}">{{ product }}</a></div>
+    {% if product.image %}
+    <img src="{{product.image.url}}" style="width:50;height:60px;">
+    
+    {% endif %}
+</div>
+{% endfor %}
+{% else %}
+<h3>No products yet</h3>
+{% endif %}
+{% endblock %}
